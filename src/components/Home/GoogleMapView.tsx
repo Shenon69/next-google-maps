@@ -18,11 +18,13 @@ const GoogleMapView = (props: Props) => {
         <div>
             <LoadScript
                 googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY!}
+                mapIds={[process.env.NEXT_PUBLIC_MAP_ID!]}
             >
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
                     center={cordinates}
-                    zoom={20}
+                    zoom={15}
+                    options={{ mapId: process.env.NEXT_PUBLIC_MAP_ID! }}
                 ></GoogleMap>
             </LoadScript>
         </div>
